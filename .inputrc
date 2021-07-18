@@ -1,4 +1,0 @@
-set show-mode-in-prompt on
-set editing-mode vi
-set keymap vi-command
-v: ""
