@@ -1,7 +1,6 @@
 " general config"
 set backspace=indent,eol,start
 syntax on
-set t_co=256
 
 set nocompatible 
 set wildmenu
@@ -22,9 +21,14 @@ set wildmode=longest,full
 set pastetoggle=<F2>
 set splitright
 set splitbelow
+set laststatus=2
 
 nnoremap <SPACE> <Nop>
 let mapleader=" " " mapleader
+
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " set the runtime path to include Vundle and fzf
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -33,26 +37,23 @@ set rtp+=~/.fzf
 " for plugin
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'morhetz/gruvbox'
+Plugin 'itchyny/lightline.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'nvie/vim-flake8'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'ekalinin/dockerfile.vim'
-Plugin 'tibabit/vim-templates'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'yosiat/oceanic-next-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 call vundle#end()
 
-colo slate 
+let g:gruvbox_contrast_dark = "medium"
+set bg=dark
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Commentary
 nnoremap <silent> <Leader>/ :Commentary<CR>
@@ -85,3 +86,4 @@ let g:pydocstring_formatter = 'google'
 
 " for COC VIM
 let g:coc_disable_startup_warning = 1   
+

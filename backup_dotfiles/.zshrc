@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/patrick/.oh-my-zsh"
 
@@ -69,12 +70,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  vi-mode
-  history-substring-search
-  ssh-agent
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,24 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/mnt/ai_filestore/home/patrick/app/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/mnt/ai_filestore/home/patrick/app/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/mnt/ai_filestore/home/patrick/app/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/mnt/ai_filestore/home/patrick/app/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export TERM=xterm-256color
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export GPG_TTY=$(tty)
-
-# Created by `pipx` on 2021-07-02 09:19:59
-export PATH="$PATH:/home/patrick/.local/bin"
+# Set vi mode input 
+set -o vi
