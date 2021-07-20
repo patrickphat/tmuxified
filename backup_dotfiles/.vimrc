@@ -49,7 +49,19 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'yosiat/oceanic-next-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plugin 'itchyny/vim-gitbranch'
 call vundle#end()
+
+" Show git branch on lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
 
 let g:gruvbox_contrast_dark = "medium"
 set bg=dark
