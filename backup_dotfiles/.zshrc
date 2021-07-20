@@ -104,3 +104,5 @@ export TERM=xterm-256color
 
 # Set vi mode input 
 set -o vi
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
