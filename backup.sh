@@ -1,5 +1,5 @@
 mkdir -p  backup_dotfiles
-myarray=(~/.bashrc ~/.tmux.conf ~/.vimrc ~/.zshrc)
+myarray=(~/.tmux.conf ~/.vimrc)
 
 for i in "${myarray[@]}"; do
 	cp "$i" "backup_dotfiles/"	
