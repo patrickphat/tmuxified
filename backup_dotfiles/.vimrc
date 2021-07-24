@@ -22,6 +22,7 @@ set pastetoggle=<F2>
 set splitright
 set splitbelow
 set laststatus=2
+<<<<<<< HEAD
 set relativenumber
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -30,6 +31,8 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+=======
+>>>>>>> origin/master
 
 nnoremap <SPACE> <Nop>
 let mapleader=" " " mapleader
@@ -45,7 +48,10 @@ set rtp+=~/.fzf
 " for plugin
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+<<<<<<< HEAD
 Plugin 'tomtom/tcomment_vim'
+=======
+>>>>>>> origin/master
 Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -59,7 +65,10 @@ Plugin 'yosiat/oceanic-next-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 Plugin 'itchyny/vim-gitbranch'
+<<<<<<< HEAD
 Plugin 'cocopon/iceberg.vim'
+=======
+>>>>>>> origin/master
 call vundle#end()
 
 " Show git branch on lightline
@@ -71,10 +80,18 @@ let g:lightline = {
       \ 'component_function': {
       \   'gitbranch': 'gitbranch#name'
       \ },
+<<<<<<< HEAD
       \ 'colorscheme': 'iceberg'
       \ }
 colorscheme iceberg 
 set bg=dark
+=======
+      \ }
+
+let g:gruvbox_contrast_dark = "medium"
+set bg=dark
+autocmd vimenter * ++nested colorscheme gruvbox
+>>>>>>> origin/master
 
 " Commentary
 nnoremap <silent> <Leader>/ :TComment<CR>
@@ -108,6 +125,7 @@ let g:pydocstring_formatter = 'google'
 
 " for COC VIM
 let g:coc_disable_startup_warning = 1   
+<<<<<<< HEAD
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -128,3 +146,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+=======
+
+>>>>>>> origin/master
