@@ -17,6 +17,7 @@ set foldlevel=10
 set ignorecase
 set smartcase
 set lazyredraw
+set noshowmode
 set wildmode=longest,full
 set pastetoggle=<F2>
 set splitright
@@ -24,6 +25,16 @@ set splitbelow
 set laststatus=2
 set relativenumber
 filetype plugin indent on
+
+" Copy to system clipboard
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
+set hlsearch
+set incsearch
+set linebreak
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -68,7 +79,7 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
+      \   'gitbranch': 'FugitiveHead'
       \ },
       \ 'colorscheme': 'iceberg'
       \ }
@@ -211,3 +222,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+" Should be at bottom
+set noshowmode  " to get rid of thing like --INSERT--
+set noshowcmd  " to get rid of display of last command
+set shortmess+=F  " to get rid of the file name displayed in the command line bar
