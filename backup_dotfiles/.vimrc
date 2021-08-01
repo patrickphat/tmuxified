@@ -17,7 +17,6 @@ set foldlevel=10
 set ignorecase
 set smartcase
 set lazyredraw
-set noshowmode
 set wildmode=longest,full
 set pastetoggle=<F2>
 set splitright
