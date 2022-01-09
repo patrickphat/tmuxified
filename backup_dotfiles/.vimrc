@@ -17,20 +17,18 @@ set foldlevel=10
 set ignorecase
 set smartcase
 set lazyredraw
-set noshowmode
 set wildmode=longest,full
 set pastetoggle=<F2>
 set splitright
 set splitbelow
 set laststatus=2
 set relativenumber
+set number
 filetype plugin indent on
 
 " Copy to system clipboard
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 set hlsearch
 set incsearch
