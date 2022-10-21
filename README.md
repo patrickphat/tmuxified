@@ -9,5 +9,7 @@ git clone git@github.com:patrickphat/tmuxified.git
 ```
 
 # link tmux.conf
+```bash
 ln -sfn ~/.tmux/.tmux.conf ~/.tmux.conf
+```
 
